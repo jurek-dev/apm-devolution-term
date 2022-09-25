@@ -1,3 +1,41 @@
+// Function to pick up actual date, month and year
+function formatDate() {
+    // Months
+    const month = [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro"
+    ];
+
+    // Constantes
+    const d = new Date();
+    const m = new Date();
+    const y = new Date();
+
+    let day = d.getDate();
+    let monthName = month[m.getMonth()];
+    let year = y.getFullYear();
+    let textDate;
+
+    if(day < 10) {
+        textDate = "Itajaí, 0" + day + ", de " + monthName + " de " + year;
+    }
+    else {
+        textDate = "Itajaí, " + day + ", de " + monthName + " de " + year;
+    }
+
+    document.write(textDate);
+}
+
 function genTerm() {
     var employeename = document.getElementById("employee-input").value;
     var employeecpf = document.getElementById("cpf-input").value;
@@ -15,30 +53,11 @@ function genTerm() {
     var equipment5 = document.getElementById("equipment-name5").value;
     var serial5 = document.getElementById("equipment-sn5").value;
 
-
-    const month = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-
-    const d = new Date();
-    const m = new Date();
-    const y = new Date();
-
-    let day = d.getDate();
-    let monthName = month[m.getMonth()];
-    let year = y.getFullYear();
-    let formatDate;
-
-    if(day < 10) {
-        formatDate = "Itajaí, 0" + day + " de " + monthName + " de " + year;
-    }
-    else {
-        formatDate = "Itajaí, " + day + " de " + monthName + " de " + year;
-    }
-
     document.write("<main style='display:flex; flex-direction:column; align-items:center; text-align:center;'>");
 
         document.write("<div>");
             document.write("<h1 style='font-size: 22pt;'>Termo de devolução de equipamento</h1>");
-            document.write("<p style='font-size: 12pt;'>Eu, " + employeename + ", portador(a) do CPF " + formatCpf + ", declaro estar devolvendo os equipamentos de informática listados abaixo em perfeitas condições de uso ao Departamento de Tecnologia da Informação da empresa APM Terminals, portadora do CPNJ 04.700.714/0001-63, revogando qualquer tipo de responsabilidade sob estes equipamentos.</p>");
+            document.write("<p style='font-size: 12pt;'>Eu, " + employeename + ", inscrito no CPF/ME sob o nº " + formatCpf + ", declaro devolver nesta data os equipamentos de informática listados abaixo em perfeitas condições de uso ao Departamento de Tecnologia da Informação da empresa APM Terminals Itajaí S.A., inscrita no CPNJ/ME sob o nº 04.700.714/0001-63, cessando desde a presente e mediante o recebimento expresso por parte da empresa qualquer responsabilidade pessoal pela guarda e/ou manutenção do referido equipamento.</p>");
         document.write("</div>");
 
         document.write("<div>")
@@ -77,7 +96,7 @@ function genTerm() {
         document.write("<div style='display: flex; flex-direction: row; margin-top: 10rem;'>");
             document.write("<div>");
                 document.write("<hr style='background-color: #000; width: 250px; height: 1px;'>");
-                document.write("<p style='font-size: 16pt;'>Dep. de T.I</p>");
+                document.write("<p style='font-size: 16pt;'>Dep. de T.I<br/>APM Terminals Itajaí S.A.</p>");
             document.write("</div>");
 
             document.write("<div style='width: 100px'>");
@@ -90,10 +109,15 @@ function genTerm() {
         document.write("</div>");
 
         document.write("<div style='margin-top: 3rem'>");
-            document.write(formatDate);
-            document.write("</main>");
+            formatDate();
         document.write("</div>");
+    document.write("</main>");
 
     // Function to request print the document.
+    sendToPrint();
+}
+
+function sendToPrint() {
     print();
+    console.log("Requested to print the document.");
 }

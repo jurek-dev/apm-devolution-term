@@ -5,35 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Term of Equipment Devolution</title>
-    <link rel="shortcut icon" href="/assets/apterminals-ricot.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/apterminals-ricot.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <main>
             <form id="form-interface" onsubmit="genTerm()">
 
                 <div class="field">
-                    <img class="form-img" src="/assets/apm-terminals-logo.png" alt="">
+                    <img class="form-img" src="assets/apm-terminals-logo.png" alt="">
                 </div>
                 
                 <div class="field">
                     <h1>Term of Equipment Devolution</h1>
-                    <p>Fill in the below fields and click in generate's button for generate the term of equipment devolution.</p>
+                    <p>Fill the below fields and click in generate's button for generate the term of equipment devolution.</p>
                 </div>
                 
                 <div class="field">
-                    <label for="employee-input">Employee's Name:</label>
+                    <label for="employee-input">Employee's Name*:</label>
                     <input id="employee-input" type="text" placeholder="Type the employee's name" required>
                 </div>
         
                 <div class="field">
-                    <label for="cpf-input">CPF: </label>
+                    <label for="cpf-input">CPF*: </label>
                     <input id="cpf-input" type="text" maxlength="11" pattern="[0-9]{11}" placeholder="Type the Register of Fisic Person of employee" required>
                 </div>
 
                 <div class="field">
-                    <label for="equipment-name0">Equipment:</label>
+                    <label for="equipment-name0">Equipment*:</label>
                     <input id="equipment-name0" type="text" placeholder="Equipment's name" required>
                     <input id="equipment-sn0" type="text" placeholder="Serial Number/Model" required>
                 </div>
@@ -68,11 +68,11 @@
                 </div>
                 
                 <div class="field">
-                    <p>*This form only use for generate devolutions terms of <b>APM Terminals.</b> The generated term never got be shared with peoples without perission.</p>
+                    <p>*This form only can be used by department of technology of information for generate the terms of equipments devolution of employees of APM Terminals Itajaí</p>
                 </div>
                 
             </form>
     </main>
 </body>
-<script src="/assets/script.js"></script>
+<script src="assets/script.js"></script>
 </html>
